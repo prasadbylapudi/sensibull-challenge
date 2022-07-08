@@ -9,11 +9,8 @@ import StockList from './StockList'
 export default function Searchstock() {
   const { data } = useContext(ContextData)
   const [searchData, setSearchData] = useState('')
-  console.log('searchdata', searchData)
   var filteredData = data
-  console.log('before search fil data', filteredData)
   const handleChange = (e) => {
-    console.log(e.target.value)
     setSearchData(e.target.value)
   }
   filteredData = data.filter(
@@ -21,7 +18,6 @@ export default function Searchstock() {
       item.Symbol.toLowerCase().includes(searchData) ||
       item.Name.toLowerCase().includes(searchData),
   )
-  console.log('filtered data', filteredData)
   const debouncedResults = useMemo(() => {
     return debounce(handleChange, 100)
   }, [])

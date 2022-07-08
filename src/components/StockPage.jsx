@@ -4,7 +4,6 @@ import { ContextData } from "./ContextData";
 import Header from "./Header";
 function StockPage() {
   const [data, setData] = useState([]);
-  console.log("data", data);
 
   const fetchData = useCallback(() => {
     fetch("https://prototype.sbulltech.com/api/v2/instruments")
