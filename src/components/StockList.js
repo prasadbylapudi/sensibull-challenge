@@ -6,13 +6,9 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import { ContextData } from './ContextData'
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-
 export default function StockList(props) {
   const filteredData = props.filteredData
-  // const { data } = useContext(ContextData)
   const data = filteredData
   return (
     <TableContainer component={Paper}>

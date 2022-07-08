@@ -3,18 +3,22 @@
   width: 100%;
 }
 
-.table td,
 .table th {
+  color: white;
+  background-color: black;
   padding: 8px;
-  text-align: left;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.table td {
+  padding: 8px;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 .table tr:hover {
-  background-color: #d6eeee;
+  background-color: whitesmoke;
 }
-.tableWrapper {
-  background: #000;
-}
+
 .tableInner {
   max-width: 850px;
   margin: 0 auto;
@@ -25,6 +29,6 @@
 .tableContainer {
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 2px 1px 3px 2px #811a6f;
+  box-shadow: 3px 1px 3px 2px #dcd6db;
   background: #fff;
 }

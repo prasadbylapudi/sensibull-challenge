@@ -6,7 +6,7 @@ import { COLUMNS } from './QuoteColumn.js'
 import classes from './Quotes.module.css'
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button'
-
+import Header from './Header.js'
 const Quote = () => {
   const params = useParams()
   const [quotes, setQuotes] = useState([])
@@ -20,7 +20,7 @@ const Quote = () => {
         const payloadData = parseData.payload[params.symbol]
         setQuotes(() => [...payloadData])
       })
-  }, [])
+  }, [params])
 
   useEffect(() => {
     fetchQuotes()
@@ -44,6 +44,8 @@ const Quote = () => {
 
   return (
     <>
+      <h1>quotes page</h1>
+      <Header />
       <div className={classes.tableInner}>
         <div className={classes.tableContainer}>
           <table {...getTableProps()} className={classes.table}>

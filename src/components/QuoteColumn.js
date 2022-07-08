@@ -2,16 +2,16 @@ export const COLUMNS = [
   {
     Header: 'Time',
     accessor: 'time',
-    disableSortBy: true,
+    disableSortBy: false,
   },
   {
     Header: 'Price',
     accessor: 'price',
-    disableSortBy: true,
+    disableSortBy: false,
   },
   {
     Header: 'Valid Till',
     accessor: 'valid_till',
-    disableSortBy: false,
+    disableSortBy: true,
   },
 ]

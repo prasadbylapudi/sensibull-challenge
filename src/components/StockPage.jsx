@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
 import SearchStock from "./SearchStock";
 import { ContextData } from "./ContextData";
+import Header from "./Header";
 function StockPage() {
   const [data, setData] = useState([]);
   console.log("data", data);
-  const [loading, setLoading] = useState(false);
 
   const fetchData = useCallback(() => {
-    setLoading(true);
     fetch("https://prototype.sbulltech.com/api/v2/instruments")
       .then((response) => {
         return response.text();
@@ -18,9 +17,6 @@ function StockPage() {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   }, []);
   function csvJSON(csv) {
@@ -46,7 +42,8 @@ function StockPage() {
   }, [fetchData]);
   return (
     <ContextData.Provider value={{ data }}>
-      <h1>Stock Page</h1>
+      <Header />
+      <h1>quotes page</h1>
       <SearchStock />
     </ContextData.Provider>
   );

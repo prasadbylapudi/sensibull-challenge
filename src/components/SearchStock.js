@@ -23,7 +23,7 @@ export default function Searchstock() {
   )
   console.log('filtered data', filteredData)
   const debouncedResults = useMemo(() => {
-    return debounce(handleChange, 1000)
+    return debounce(handleChange, 100)
   }, [])
 
   useEffect(() => {
