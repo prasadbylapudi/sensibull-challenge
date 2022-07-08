@@ -8,8 +8,12 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { ContextData } from './ContextData'
 import { useContext } from 'react'
-export default function StockList() {
-  const { data } = useContext(ContextData)
+import { Link } from 'react-router-dom'
+
+export default function StockList(props) {
+  const filteredData = props.filteredData
+  // const { data } = useContext(ContextData)
+  const data = filteredData
   return (
     <TableContainer component={Paper}>
       <Table stickyHeader sx={{ minWidth: 650 }} aria-label="sticky table">
@@ -18,29 +22,29 @@ export default function StockList() {
             <TableCell>
               <h1>Symbol</h1>
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               <h1>Name</h1>
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               <h1>Sector</h1>
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               <h1>Validtill</h1>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((item) => (
+          {data.map((item, idx) => (
             <TableRow
-              key={item.name}
+              key={idx}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {item.Symbol}
+                <Link to={`/quotes/${item.Symbol}`}>{item.Symbol}</Link>
               </TableCell>
-              <TableCell align="right">{item.Name}</TableCell>
-              <TableCell align="right">{item.Sector}</TableCell>
-              <TableCell align="right">{item.Validtill}</TableCell>
+              <TableCell align="left">{item.Name}</TableCell>
+              <TableCell align="left">{item.Sector}</TableCell>
+              <TableCell align="left">{item.Validtill}</TableCell>
             </TableRow>
           ))}
           {data.length === 0 && (
@@ -48,7 +52,7 @@ export default function StockList() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                No data found
+                <h3>nothing matched & try new stuff</h3>
               </TableCell>
             </TableRow>
           )}

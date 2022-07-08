@@ -1,14 +1,14 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import StockPage from './components/StockPage'
-import StockItem from './components/StockItem'
+import Quote from './components/Quote'
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<StockPage />} />
         <Route exact path="/stockpage" element={<StockPage />} />
-        <Route exact path="/stockitem" element={<StockItem />} />
+        <Route path="quotes/:symbol" element={<Quote />} />
       </Routes>
     </BrowserRouter>
   )

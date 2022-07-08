@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import StockItem from "./StockItem";
 import SearchStock from "./SearchStock";
-import StockList from "./StockList";
 import { ContextData } from "./ContextData";
 function StockPage() {
   const [data, setData] = useState([]);
@@ -31,17 +29,15 @@ function StockPage() {
     var result = [];
     var headers = lines[0].split(",");
 
-    for (var i = 1; i < lines.length; i++) {
+    for (var i = 1; i < lines.length - 1; i++) {
       var obj = {};
       var currentLine = lines[i].split(",");
 
       for (var j = 0; j < headers.length; j++) {
         obj[headers[j]] = currentLine[j];
       }
-
       result.push(obj);
     }
-
     return result;
   }
 
@@ -49,9 +45,9 @@ function StockPage() {
     fetchData();
   }, [fetchData]);
   return (
-    <ContextData.Provider value={{ data, loading }}>
+    <ContextData.Provider value={{ data }}>
+      <h1>Stock Page</h1>
       <SearchStock />
-      <StockList />
     </ContextData.Provider>
   );
 }
