@@ -1,6 +1,7 @@
 import React from 'react'
 import { Toolbar, AppBar, Typography, Box } from '@mui/material'
 import Logo from './assets/sensibull_logo.png'
+
 function Header() {
   return (
     <>
@@ -14,7 +15,9 @@ function Header() {
             alt="sensibull"
             src={Logo}
           />
-          <Typography variant="h5">Sensibull Challenge</Typography>
+          <Typography align="center" ml={40} variant="h3">
+            Sensibull Challenge
+          </Typography>
         </Toolbar>
       </AppBar>
     </>
