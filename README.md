@@ -14,5 +14,5 @@ run this command and see output in localhost.
 ### view deployed site here
 
 
-view here [sensibull-assignment](https://sensibull-challenge.netlify.app/).
+view here [samaaro-assignment](https://samaaro-task.netlify.app/).
 
