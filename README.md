@@ -1,5 +1,5 @@
 # Installation steps
-this is private repository but I have the site deployed live.
+
 clone this repository and make sure you have npm package installed.
 
 run `npm install`
